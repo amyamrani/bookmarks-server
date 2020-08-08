@@ -20,6 +20,7 @@
     "helmet": "^3.23.3",
     "morgan": "^1.10.0",
     "uuid": "^8.3.0",
+    "valid-url": "^1.0.9",
     "winston": "^3.3.3"
   },
   "devDependencies": {
