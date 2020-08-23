@@ -29,6 +29,7 @@ bookmarksRouter
   .post(jsonParser, (req, res, next) => {
     // get the data from the body
     const { title, url, description, rating } = req.body;
+    const ratingNumber = Number(rating)
 
     // validation
     if (!title) {
@@ -49,8 +50,8 @@ bookmarksRouter
         });
     }
 
-    if (!rating || !Number.isInteger(rating) || (rating < 1 || rating > 5)) {
-      logger.error(`Invalid rating entered: '${rating}'`);
+    if (!ratingNumber || !Number.isInteger(ratingNumber) || (ratingNumber < 1 || ratingNumber > 5)) {
+      logger.error(`Invalid rating entered: '${ratingNumber}'`);
       return res
         .status(400)
         .send({
